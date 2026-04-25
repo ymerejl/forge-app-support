@@ -1,5 +1,5 @@
 Privacy Policy
-Last updated: April 11, 2026
+Last updated: April 25, 2026
 
 FORGE: Level Your Life ("FORGE", "we", "us", or "our") respects your privacy. This Privacy Policy explains what data we collect, why we collect it, where it is stored, with whom it is shared, and the rights you have over your data when you use our iOS application.
 
@@ -22,6 +22,15 @@ Focus Timer sessions and total focus minutes
 1.4 Technical Data
 Device identifiers used by Google AdMob to serve advertisements (free tier only). You can opt out of personalized ads in iOS Settings → Privacy & Security → Apple Advertising.
 Subscription receipts processed by Apple. We never see or store your payment information.
+1.5 Focus Shield (Apple Screen Time / Family Controls)
+Focus Shield is an optional feature that lets you block distracting apps and websites during focus sessions. It uses Apple's Family Controls, DeviceActivity, and ManagedSettings frameworks (Apple Screen Time APIs).
+
+What we collect: Nothing. No app names, no website URLs, no usage statistics, and no time-tracking data ever leave your device. FORGE never sees which apps or sites you select.
+What is stored locally: Your selection of apps and websites to block is stored on your device only, in iOS UserDefaults, in the form of opaque tokens managed by Apple's FamilyActivityPicker. These tokens are not human-readable identifiers — neither FORGE nor any third party can derive app names, bundle IDs, or website URLs from them.
+Mode: FORGE uses Family Controls in .individual mode (personal self-management). FORGE does not use any parental-control or child-monitoring functionality and does not require a parent/guardian Apple ID.
+What is blocked & how to lift it: When you start a Focus Shield session, the apps and websites you selected are temporarily restricted by Apple's system-level Screen Time APIs. You can lift all blocks at any time via FORGE → Settings → Focus Shield → Clear All Blocks, or by revoking Screen Time access for FORGE in iOS Settings → Screen Time.
+Network transmission: Focus Shield data never leaves your device. No blocked-app lists, session timestamps, or app-usage statistics are transmitted to FORGE servers, Firebase, AdMob, or any third party.
+
 2. Why We Collect This Data
 Core app functionality — to provide the FORGE experience (task management, character progression, gamified rewards).
 Cloud sync & backup — to synchronize your progress across multiple devices and protect against data loss.
@@ -32,6 +41,8 @@ Notifications — to send optional reminders for habits and dailies (only if you
 Advertising — to display ads in the free version via Google AdMob. Pro subscribers see no ads.
 3. Where Your Data Is Stored
 All account, character, and productivity data is stored on Google Firebase (Firestore database and Firebase Authentication), hosted in the europe-west6 region — Google Cloud's data center in Zürich, Switzerland. Data is protected by Firebase Security Rules and encrypted in transit (HTTPS/TLS) and at rest.
+
+Focus Shield selections (blocked apps/websites) are stored exclusively on your device in iOS UserDefaults and are never transmitted to any server.
 
 4. Who Sees Your Data
 4.1 Other FORGE Players
@@ -46,7 +57,7 @@ No private data — email, name, task content, habit details, or productivity st
 4.2 Service Providers
 Google Firebase (Authentication, Firestore, Cloud Functions) — infrastructure provider. See Firebase Privacy.
 Google AdMob — for ads in the free version. See Google Privacy.
-Apple — for Sign in with Apple authentication and subscription processing. See Apple Privacy.
+Apple — for Sign in with Apple authentication, subscription processing, and Screen Time / Family Controls APIs (Focus Shield). The Screen Time APIs run entirely on-device; no Focus Shield data is shared with Apple or anyone else. See Apple Privacy.
 4.3 No Sale of Data
 We do not sell, rent, or share your personal data with third parties for advertising or marketing purposes. The only advertising in FORGE is served by Google AdMob to free-tier users, and you can disable personalized ads in iOS Settings.
 
